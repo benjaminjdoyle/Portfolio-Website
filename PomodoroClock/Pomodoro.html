@@ -1,0 +1,99 @@
+<!doctype html>
+<html ng-app='app'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pomodoro Clock</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+    <link rel="stylesheet" href="Pomodoro.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="author" href="humans.txt">
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+
+<body ng-controller='PomodoroController as vm'>
+    <div layout-padding layout-wrap layout="row" layout-align='center'>
+        <div layout='column' layout-align='center' flex>
+            
+            <div layout='row' layout-align='center' flex>
+            
+            <md-button class="left md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.addTimeSessionMinutes()" flex>
+
+            <i class="fa fa-4x fa-chevron-circle-up"></i>
+            </md-button>
+
+            <md-button class="right md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.addTimeSessionSeconds()" flex>
+                <i class="fa fa-4x fa-chevron-circle-up"></i>
+            </md-button>
+            </div>
+            <div layout='row' layout-align="center" flex>
+            <h1>{{vm.sessionTimeMinutes}}:</h1>
+            <h1>{{vm.sessionTimeSecondsDisplay}}</h1>
+            </div>
+            <div layout='row' layout-align="center" flex>
+            <md-button class="left md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.minusTimeSessionMinutes()" flex>
+               <i class="fa fa-4x fa-chevron-circle-down"></i>
+            </md-button>
+            <md-button class="right md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.minusTimeSessionSeconds()" flex>
+               <i class="fa fa-4x fa-chevron-circle-down"></i>
+            </md-button>
+            
+            </div>
+            <h1>Session</h1>
+        </div>
+        <div layout='column' layout-align='center' flex>
+           <h1 flex>{{vm.status}}</h1>
+            <h1 >{{vm.displayTime}}</h1>
+            
+            <md-button class='md-mini' aria-label='Start' md-ripple-size='auto' ng-click='vm.startTimer()' flex>
+                <h1>Start</h1></md-button>
+            <div layout='row' layout-align='center'>
+                <md-button layout-align='center' class='left stop/reset' aria-label='Start' md-ripple-size='auto' ng-click='vm.stopTimer()' flex>
+                	<h3>Stop</h3>
+                </md-button>
+                <md-button class='right md-mini' aria-label='Reset' md-ripple-size='auto' ng-click='vm.resetTimer()' flex>
+                    <h3>Reset</h3>
+                </md-button>
+            </div>
+        </div>
+        <div layout='column' layout-align='center' flex>
+            <div layout='row' layout-align='center' flex>
+            
+            <md-button class="left md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.addTimeBreakMinutes()" flex>
+
+            <i class="fa fa-4x fa-chevron-circle-up"></i>
+            </md-button>
+
+            <md-button class="right md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.addTimeBreakSeconds()" flex>
+                <i class="fa fa-4x fa-chevron-circle-up"></i>
+            </md-button>
+            </div>
+            <div layout='row' layout-align="center" flex>
+            <h1>{{vm.breakTimeMinutes}}:</h1>
+            <h1>{{vm.breakTimeSecondsDisplay}}</h1>
+            </div>
+            <div layout='row' layout-align="center" flex>
+            <md-button class="left md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.minusTimeBreakMinutes()" flex>
+               <i class="fa fa-4x fa-chevron-circle-down"></i>
+            </md-button>
+            <md-button class="right md-mini" aria-label="Add Time" md-no-ink="false" md-ripple-size="auto" ng-click="vm.minusTimeBreakSeconds()" flex>
+               <i class="fa fa-4x fa-chevron-circle-down"></i>
+            </md-button>
+            
+            </div>      
+				</md-button>
+            <h1>Break</h1>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+    <script src="Pomodoro.js"></script>
+</body>
+
+</html>

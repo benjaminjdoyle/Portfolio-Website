@@ -1,0 +1,33 @@
+body {
+	background: url("http://climate.nasa.gov/assets/intro_image.jpg"
+) no-repeat;
+	background-attachment: absolute; 
+}
+p {
+	color: white;
+}
+h1 {
+	margin: 0;
+	color: white;
+	text-align: center;
+}
+h3 {
+	color: white;
+	text-align: center;
+}
+i {
+	color: white;
+
+}
+#break {
+	color: red;
+}
+#session {
+	color: green;
+}
+.Right{
+	margin-right: 50px;
+}
+.Left{
+	margin-left: 50px;
+}
